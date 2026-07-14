@@ -1,6 +1,8 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from datetime import datetime
+
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
+
 from app.database.database import Base
 
 
@@ -28,12 +30,14 @@ class ChatSession(Base):
         ForeignKey("users.id"),
         nullable=False
     )
+
     user = relationship(
-    "User",
-    back_populates="chat_sessions"
+        "User",
+        back_populates="chat_sessions"
     )
+
     messages = relationship(
-    "ChatMessage",
-    back_populates="session",
-    cascade="all, delete-orphan"
-  )
+        "ChatMessage",
+        back_populates="session",
+        cascade="all, delete-orphan"
+    )

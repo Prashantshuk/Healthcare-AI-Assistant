@@ -1,6 +1,8 @@
 from datetime import datetime
+
 from sqlalchemy import Column, Integer, Text, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
+
 from app.database.database import Base
 
 
@@ -35,6 +37,6 @@ class ChatMessage(Base):
     )
 
     session = relationship(
-    "ChatSession",
-    back_populates="messages"
+        "ChatSession",
+        back_populates="messages"
     )

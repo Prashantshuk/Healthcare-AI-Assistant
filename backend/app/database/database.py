@@ -1,7 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
-
-DATABASE_URL = "sqlite:///healthcare.db"
+from app.core.config import DATABASE_URL
 
 engine = create_engine(
     DATABASE_URL,

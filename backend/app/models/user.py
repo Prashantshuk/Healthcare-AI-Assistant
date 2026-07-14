@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
+
 from app.database.database import Base
 
 
@@ -29,6 +30,7 @@ class User(Base):
         default="user",
         nullable=False
     )
+
     chat_sessions = relationship(
         "ChatSession",
         back_populates="user",

@@ -44,3 +44,11 @@ class ChatSessionResponse(BaseModel):
     model_config = ConfigDict(
         from_attributes=True
     )
+
+class ChatSessionDetail(BaseModel):
+
+    session_id: int
+
+    title: str
+
+    messages: list[ChatMessageResponse]

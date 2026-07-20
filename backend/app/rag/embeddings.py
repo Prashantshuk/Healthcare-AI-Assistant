@@ -1,11 +1,9 @@
-
-
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from app.core.gemini_config import GOOGLE_API_KEY
 
 
-from langchain_huggingface import HuggingFaceEmbeddings
-
 def get_embeddings():
-    return HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
+    return GoogleGenerativeAIEmbeddings(
+        model="models/gemini-embedding-001",
+        google_api_key=GOOGLE_API_KEY
     )

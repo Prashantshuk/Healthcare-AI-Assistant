@@ -1,5 +1,12 @@
+
 venv/
 .env
 __pycache__/
 *.pyc
 healthcare.db
+
+# Uploaded PDFs
+data/
+
+# FAISS vector database
+faiss_index/

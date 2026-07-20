@@ -1,0 +1,48 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+venv/
+.venv/
+env/
+v/
+
+# Environment variables
+.env
+backend/.env
+
+# Uploaded PDFs
+backend/data/
+
+# FAISS Index
+backend/faiss_index/
+
+# Python cache
+backend/**/__pycache__/
+
+# Test / temporary files
+backend/test.py
+project_dump.txt
+
+# ==========================
+# React / Node
+# ==========================
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

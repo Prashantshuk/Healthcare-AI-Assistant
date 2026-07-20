@@ -52,3 +52,7 @@ class ChatSessionDetail(BaseModel):
     title: str
 
     messages: list[ChatMessageResponse]
+
+class ChatMessagesListResponse(BaseModel):
+
+    messages: list[ChatMessageResponse]

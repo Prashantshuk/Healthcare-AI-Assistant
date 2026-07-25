@@ -20,16 +20,19 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 async def upload_pdf(files: List[UploadFile] = File(...)):
 
     all_chunks = []
-
+    
     for file in files:
 
         file_path = os.path.join(UPLOAD_FOLDER, file.filename)
+        print(f"Saving uploaded file to: {file_path}")
 
         with open(file_path, "wb") as buffer:
             buffer.write(await file.read())
+            print(f"File {file.filename} saved successfully.")
 
         # Load PDF
         documents = load_pdf(file_path)
+        print(f"Loaded {len(documents)} pages from {file.filename}")
 
         # Safety check
         if not documents or not any(d.page_content.strip() for d in documents):

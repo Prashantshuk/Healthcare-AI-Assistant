@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://healthcare-ai-assistant-2.onrender.com",
+  baseURL: "https://healthcare-ai-assistant-4.onrender.com",
 });
 
 api.interceptors.request.use((config) => {

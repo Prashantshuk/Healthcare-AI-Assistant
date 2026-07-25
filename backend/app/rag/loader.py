@@ -14,12 +14,6 @@ def load_pdf(file_path: str):
                 text = ""
             docs.append(Document(page_content=text, metadata={"page_number": i + 1}))
 
-        print(f"Pages: {len(docs)}")
-        for i, d in enumerate(docs[:5]):
-            print("=" * 40)
-            print(f"Page {i+1}")
-            print(repr(d.page_content[:200]))
-
         non_empty_docs = [d for d in docs if d.page_content.strip()]
         if not non_empty_docs:
             print("WARNING: No text extracted — likely a scanned/image PDF, needs OCR")
